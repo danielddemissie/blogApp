@@ -1,0 +1,9 @@
+#post-bg {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 60%;
+}
+
+#post-bg .post-image {
+  height: 600px;
+}

@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "./controllers",
+    "./models",
+    "./routes",
+    "./dbconfig.js",
+    "./index.js",
+    "./nodemon.json",
+    "./middleware/upload.js"
+  ]
+}
