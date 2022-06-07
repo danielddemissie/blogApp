@@ -1,12 +1,12 @@
 .header {
-  position: fixed;
+  position: sticky;
   display: grid;
   grid-template-columns: 3fr 10fr;
   grid-template-rows: 1fr;
   grid-auto-flow: column;
   background-color: #fff;
   width: 100%;
-  z-index: 999;
+  z-index: 10;
   top: 0;
   height: 70px;
   box-shadow: 0 0px 3px rgba(0, 0, 0, 0.274);
@@ -46,7 +46,7 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: 300;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-transform: capitalize;
   color: #000;
   margin-left: 20px;
@@ -57,7 +57,7 @@
 }
 
 .name {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 30px;
   font-weight: bold;
 }

@@ -1,15 +1,17 @@
 //create header componet
-import { Link } from "react-router-dom";
-import "./header.css";
-import { useState } from "react";
-import Modal from "../modal/Modal";
+import { Link } from 'react-router-dom';
+import './header.css';
+import { useState } from 'react';
+import Modal from '../modal/Modal';
 
 export default function Header(props) {
   const [modal, setModal] = useState(false);
   return (
     <div className="header">
       <div className="left">
-        <h1 className="name">News</h1>
+        <Link to="/">
+          <h1 className="name">News</h1>
+        </Link>
       </div>
       <div className="right">
         <div className="menus">
