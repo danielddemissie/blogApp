@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-require("dotenv").config();
-const uri = process.env.MONGODB_URI || rocess.env.MONGODB_URI.pro;
+const mongoose = require('mongoose');
+require('dotenv').config();
+const uri = process.env.MONGODB_URI_DEV;
 
 const conn = () => {
   mongoose.connect(
@@ -11,9 +11,9 @@ const conn = () => {
     },
     (err) => {
       if (err) {
-        console.log("error occured: ", err);
+        console.log('error occured: ', err);
       } else {
-        console.log("connected");
+        console.log('connected');
       }
     }
   );
