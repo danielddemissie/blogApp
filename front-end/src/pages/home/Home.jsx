@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import "./home.css";
-import Sidebar from "../../components/sidebar/Sidebar";
-import Loader from "react-loader-spinner";
-import Postcard from "../../components/postcard/Postcard";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import './home.css';
+import Sidebar from '../../components/sidebar/Sidebar';
+import Loader from 'react-loader-spinner';
+import Postcard from '../../components/postcard/Postcard';
 
 export default function Home() {
   const [postData, setPostData] = useState({
-    message: "",
+    message: '',
     data: [],
     success: 0,
   });
@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     const getPosts = async () => {
       try {
-        const allpost = await axios.get("/news");
+        const allpost = await axios.get('/news');
         const { message, data, success } = allpost.data;
         setPostData({
           message,
@@ -27,7 +27,7 @@ export default function Home() {
 
         setIsLoading(false);
       } catch (error) {
-        console.log("error");
+        console.log('error');
       }
     };
 
@@ -35,13 +35,12 @@ export default function Home() {
   }, []);
 
   const { data } = postData;
-  console.log(postData.data);
 
   return (
     <div className="home">
       <div className="post-div">
         {isLoading ? (
-          <div style={{ marginTop: "350px", marginLeft: "90%" }}>
+          <div style={{ marginTop: '350px', marginLeft: '90%' }}>
             <Loader
               type="ThreeDots"
               color="#00BFFF"

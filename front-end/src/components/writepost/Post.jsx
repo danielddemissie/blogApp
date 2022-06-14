@@ -83,6 +83,22 @@ function Post() {
             />
           </div>
         </div>
+        <label className="post-label">Category</label>
+        <div className="form-group">
+          <div className="category">
+            <span htmlFor="" className="btn btn-secondary">
+              Sport
+            </span>
+
+            <span htmlFor="" className="btn btn-secondary">
+              Music
+            </span>
+
+            <span htmlFor="" className="btn btn-secondary">
+              Science
+            </span>
+          </div>
+        </div>
         <div className="form-group">
           {file && (
             <div className="image">

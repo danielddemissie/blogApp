@@ -1,0 +1,30 @@
+:root {
+  --primary-btn-color: #65cbc4;
+  --primary-bg-color: #edf1f5;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 50px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.post-div {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 75px;
+  z-index: 1000;
+}
+.checkbox-label {
+  color: #e6b619;
+  padding-right: 10px;
+  font-size: 20px;
+}

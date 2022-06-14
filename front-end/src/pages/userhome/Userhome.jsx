@@ -1,50 +1,76 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import "./userhome.css";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import '../home/home.css';
+import Sidebar from '../../components/sidebar/Sidebar';
+import Loader from 'react-loader-spinner';
+import Postcard from '../../components/postcard/Postcard';
+import { useLocation } from 'react-router-dom';
 
 export default function Userhome() {
-  const pf = "http://localhost:3001/images/";
+  const userState = useLocation();
+  const { data } = userState.state;
+  console.log(data);
   const [postData, setPostData] = useState({
-    message: "",
-    data: [],
+    message: '',
+    pdata: [],
     success: 0,
   });
+
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getPosts = async () => {
       try {
-        const allpost = await axios.get("/news");
+        const allpost = await axios.get('/news');
         const { message, data, success } = allpost.data;
         setPostData({
           message,
-          data,
+          pdata: data,
           success,
         });
+
+        setIsLoading(false);
       } catch (error) {
-        console.log(error.message);
+        console.log('error');
       }
     };
 
     getPosts();
   }, []);
 
-  const { data } = postData;
-  //<img src={pf + values.image} alt="" />
-  const posts = data.map((values) => (
-    <div key={values._id}>
-      <h1>{values.title}</h1>
-      <h1>{values.desc}</h1>
-      {values.image ? (
-        <img src={pf + values.image} alt="" />
-      ) : (
-        console.log("noppe")
-      )}
-    </div>
-  ));
+  const { pdata } = postData;
+
   return (
-    <div className="home">
-      <h1>user home</h1>
-      <div>{posts}</div>
+    <div>
+      <span>{data.username}</span>
+      <div className="home">
+        <div className="post-div">
+          {isLoading ? (
+            <div style={{ marginTop: '350px', marginLeft: '90%' }}>
+              <Loader
+                type="ThreeDots"
+                color="#00BFFF"
+                height={70}
+                width={70}
+                timeout={3000} //3 secs
+              />
+            </div>
+          ) : (
+            pdata.map((post) => (
+              <Postcard
+                key={post._id}
+                imageUrl={post.image}
+                title={post.title}
+                desc={post.desc}
+                time={post.updatedAt}
+              />
+            ))
+          )}
+        </div>
+        <aside className="sidebar">
+          <Sidebar />
+        </aside>
+      </div>
     </div>
   );
 }

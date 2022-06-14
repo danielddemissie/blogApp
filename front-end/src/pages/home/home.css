@@ -5,8 +5,8 @@
 
 .home {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 50px;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 10px;
   margin-top: 20px;
   margin-left: 20px;
 }
