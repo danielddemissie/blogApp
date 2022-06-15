@@ -1,63 +1,10 @@
-.header {
-  position: sticky;
-  display: grid;
-  grid-template-columns: 3fr 10fr;
-  grid-template-rows: 1fr;
-  grid-auto-flow: column;
-  background-color: #fff;
-  width: 100%;
-  z-index: 10;
-  top: 0;
-  height: 70px;
-  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.274);
-}
-
-.left {
-  margin-left: 30px;
-  margin-top: 20px;
-}
-.right {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .profile img {
   margin-top: 5px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-.menus {
-  float: right;
-}
-
-.menus ul {
-  display: flex;
-  margin-right: 10px;
-  margin-top: 10px;
-}
-.menus ul li {
-  list-style: none;
-  margin-top: 20px;
-  margin-right: 20px;
-}
-
-.menus ul li a {
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 300;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  text-transform: capitalize;
-  color: #000;
-  margin-left: 20px;
-}
 
 .menus ul li a:hover {
   color: rgb(10, 72, 204);
-}
-
-.name {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 30px;
-  font-weight: bold;
 }

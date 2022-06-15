@@ -5,13 +5,14 @@
 
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 100px;
   grid-gap: 10px;
   margin-top: 20px;
   margin-left: 20px;
 }
 
 .post-div {
+  margin: 0 auto;
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr;
@@ -21,5 +22,6 @@
   position: fixed;
   right: 0;
   top: 75px;
+  display: none;
   z-index: 1000;
 }
