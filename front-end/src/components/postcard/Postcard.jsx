@@ -1,18 +1,18 @@
 //post-card
 
-import React from "react";
-import "./postcard.css";
-import { LikeTwoTone, CommentOutlined } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import './postcard.css';
+import { LikeTwoTone, CommentOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 
 export default function Postcard({ imageUrl, title, desc, time }) {
-  const pf = "http://localhost:3001/images/";
+  const pf = 'https://news-feed-app-me-backend.herokuapp.com/images/';
   let today = new Date(time);
   today = today.toDateString();
   const navigate = useNavigate();
   const toSinglePage = (e) => {
     e.preventDefault();
-    navigate("/singlepost", {
+    navigate('/singlepost', {
       state: {
         imageUrl,
         desc,
@@ -38,7 +38,7 @@ export default function Postcard({ imageUrl, title, desc, time }) {
         <span>300</span>
         <i
           onClick={() => {
-            console.log("like cliked");
+            console.log('like cliked');
           }}
         >
           <LikeTwoTone className="icons" />
@@ -46,7 +46,7 @@ export default function Postcard({ imageUrl, title, desc, time }) {
         <span>10</span>
         <i
           onClick={() => {
-            console.log("comment cliked");
+            console.log('comment cliked');
           }}
         >
           <CommentOutlined className="icons" />

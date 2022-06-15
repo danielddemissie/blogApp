@@ -19,23 +19,34 @@ export default function Userhome() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const getPosts = async () => {
-      try {
-        const allpost = await axios.get('/news');
-        const { message, data, success } = allpost.data;
-        setPostData({
-          message,
-          pdata: data,
-          success,
-        });
+    const source = axios.CancelToken.source();
+    try {
+      const getPosts = async () => {
+        try {
+          const allpost = await axios.get('/news');
+          const { message, data, success } = allpost.data;
+          setPostData({
+            message,
+            pdata: data,
+            success,
+          });
 
-        setIsLoading(false);
-      } catch (error) {
-        console.log('error');
+          setIsLoading(false);
+        } catch (error) {
+          console.log('error');
+        }
+      };
+
+      getPosts();
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        console.log('cancel');
       }
-    };
+    }
 
-    getPosts();
+    return () => {
+      source.cancel();
+    };
   }, []);
 
   const { pdata } = postData;
