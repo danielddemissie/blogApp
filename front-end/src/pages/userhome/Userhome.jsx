@@ -5,6 +5,7 @@ import Sidebar from '../../components/sidebar/Sidebar';
 import Loader from 'react-loader-spinner';
 import Postcard from '../../components/postcard/Postcard';
 import { useLocation } from 'react-router-dom';
+import { axiosClient } from '../../utils';
 
 export default function Userhome() {
   const userState = useLocation();
@@ -23,7 +24,7 @@ export default function Userhome() {
     try {
       const getPosts = async () => {
         try {
-          const allpost = await axios.get('/news');
+          const allpost = await axiosClient.get('/news');
           const { message, data, success } = allpost.data;
           setPostData({
             message,
